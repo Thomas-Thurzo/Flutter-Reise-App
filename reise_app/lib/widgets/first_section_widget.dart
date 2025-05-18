@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:reise_app/konstanten.dart';
 
 int aktuellerIndex = 0;
+String name = 'Porto Santo';
+String untertitel = 'Portugal';
 
 class FirstSectionWidget extends StatefulWidget {
   const FirstSectionWidget({super.key});
@@ -84,22 +86,38 @@ class _FirstSectionWidgetState extends State<FirstSectionWidget> {
           ],
         ),
         SizedBox(height: kHeight20),
-        Container(
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(kCircularBorder),
-            boxShadow: [
-              BoxShadow(blurRadius: 10, spreadRadius: 1, color: Colors.black45),
-            ],
-          ),
-          child: ClipRRect(
-            borderRadius: BorderRadius.circular(kCircularBorder),
-            child: Image.asset(
-              'assets/images/beach.jpg',
-              width: 150,
-              height: 250,
-              fit: BoxFit.cover,
+        Stack(
+          alignment: Alignment.bottomLeft,
+          children: [
+            Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(kCircularBorder),
+                boxShadow: [
+                  BoxShadow(
+                    blurRadius: 10,
+                    spreadRadius: 1,
+                    color: Colors.black45,
+                  ),
+                ],
+              ),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(kCircularBorder),
+                child: Image.asset(
+                  'assets/images/beach.jpg',
+                  width: 150,
+                  height: 250,
+                  fit: BoxFit.cover,
+                ),
+              ),
             ),
-          ),
+            Padding(
+              padding: const EdgeInsets.all(kPadding10),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [Text(name), Text(untertitel)],
+              ),
+            ),
+          ],
         ),
       ],
     );
