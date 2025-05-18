@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:reise_app/data/reiseziel_data.dart';
 import 'package:reise_app/konstanten.dart';
 
 int aktuellerIndex = 0;
-String name = 'Porto Santo';
-String untertitel = 'Portugal';
 
 class FirstSectionWidget extends StatefulWidget {
   const FirstSectionWidget({super.key});
@@ -86,38 +85,74 @@ class _FirstSectionWidgetState extends State<FirstSectionWidget> {
           ],
         ),
         SizedBox(height: kHeight20),
-        Stack(
-          alignment: Alignment.bottomLeft,
-          children: [
-            Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(kCircularBorder),
-                boxShadow: [
-                  BoxShadow(
-                    blurRadius: 10,
-                    spreadRadius: 1,
-                    color: Colors.black45,
+        SizedBox(
+          height: 280,
+          child: ListView.builder(
+            itemCount: reisezieleListe.length,
+            scrollDirection: Axis.horizontal,
+            itemBuilder: (context, index) {
+              return Center(
+                child: Padding(
+                  padding: const EdgeInsets.only(
+                    left: kPadding15,
+                    right: kPadding15,
                   ),
-                ],
-              ),
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(kCircularBorder),
-                child: Image.asset(
-                  'assets/images/beach.jpg',
-                  width: 150,
-                  height: 250,
-                  fit: BoxFit.cover,
+                  child: Stack(
+                    alignment: Alignment.bottomLeft,
+                    children: [
+                      Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(kCircularBorder),
+                          boxShadow: [
+                            BoxShadow(
+                              blurRadius: 10,
+                              spreadRadius: 1,
+                              color: Colors.black45,
+                            ),
+                          ],
+                        ),
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(kCircularBorder),
+                          child: Image.asset(
+                            reisezieleListe.elementAt(index).imagePath,
+                            width: 150,
+                            height: 250,
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(kPadding15),
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              reisezieleListe.elementAt(index).titel,
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 18,
+                                height: 1,
+                              ),
+                            ),
+                            Text(
+                              reisezieleListe.elementAt(index).untertitel,
+                              style: TextStyle(
+                                color: Colors.white70,
+                                fontSize: 14,
+                                height: 1,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(kPadding10),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [Text(name), Text(untertitel)],
-              ),
-            ),
-          ],
+              );
+            },
+          ),
         ),
       ],
     );
