@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:reise_app/konstanten.dart';
 import 'package:reise_app/widgets/first_section_widget.dart';
+import 'package:reise_app/widgets/second_section_widget.dart';
 import 'package:reise_app/widgets/ueberschrift_widget.dart';
 
 class HomePage extends StatelessWidget {
@@ -29,7 +30,14 @@ class HomePage extends StatelessWidget {
         title: Text('Bookstores'),
       ),
       body: SingleChildScrollView(
-        child: Column(children: [UeberschriftWidget(), FirstSectionWidget()]),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            UeberschriftWidget(),
+            FirstSectionWidget(),
+            SecondSectionWidget(),
+          ],
+        ),
       ),
     );
   }
