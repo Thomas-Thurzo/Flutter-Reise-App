@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:reise_app/pages/home_page.dart';
+import 'package:reise_app/widget_tree.dart';
 
 void main() {
   runApp(const MainApp());
@@ -11,7 +11,7 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: HomePage(),
+      home: WidgetTree(),
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),

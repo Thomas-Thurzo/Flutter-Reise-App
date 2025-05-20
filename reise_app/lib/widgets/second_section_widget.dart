@@ -28,7 +28,7 @@ class SecondSectionWidget extends StatelessWidget {
               return Container(
                 margin: EdgeInsets.only(bottom: kPadding7),
                 decoration: BoxDecoration(
-                  color: Colors.black.withOpacity(0.05),
+                  color: Colors.black.withOpacity(0.02),
                   borderRadius: BorderRadius.circular(kCircularBorder),
                 ),
                 height: 150,
