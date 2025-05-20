@@ -13,7 +13,7 @@ class HomePage extends StatelessWidget {
       drawer: Drawer(
         child: Column(
           children: [
-            DrawerHeader(child: Text('Überschrift')),
+            DrawerHeader(child: Text('Reisebüro App')),
             ListTile(
               onTap: () {},
               title: Text('Logout'),
@@ -27,7 +27,7 @@ class HomePage extends StatelessWidget {
         iconTheme: IconThemeData(size: kAppBarIconSize),
         centerTitle: true,
         actions: [IconButton(onPressed: () {}, icon: Icon(Icons.search))],
-        title: Text('Bookstores'),
+        title: Text('Home Page'),
       ),
       body: SingleChildScrollView(
         child: Column(
