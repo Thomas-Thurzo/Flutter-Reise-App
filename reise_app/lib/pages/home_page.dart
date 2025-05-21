@@ -27,7 +27,7 @@ class HomePage extends StatelessWidget {
         iconTheme: IconThemeData(size: kAppBarIconSize),
         centerTitle: true,
         actions: [IconButton(onPressed: () {}, icon: Icon(Icons.search))],
-        title: Text('Home Page'),
+        title: Text('Reisbüro App'),
       ),
       body: SingleChildScrollView(
         child: Column(

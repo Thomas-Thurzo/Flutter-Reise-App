@@ -17,12 +17,16 @@ class BeschreibungPage extends StatelessWidget {
         ),
         Scaffold(
           backgroundColor: Colors.transparent,
-          appBar: AppBar(backgroundColor: Colors.transparent),
+          appBar: AppBar(
+            automaticallyImplyLeading: true,
+            backgroundColor: Colors.transparent,
+          ),
           body: Padding(
-            padding: const EdgeInsets.all(50),
+            padding: const EdgeInsets.all(kPadding20),
             child: Column(
               spacing: kHeight10,
               mainAxisAlignment: MainAxisAlignment.end,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
                   reisezielModel.titel,
@@ -33,22 +37,56 @@ class BeschreibungPage extends StatelessWidget {
                   ),
                 ),
                 Text(
+                  reisezielModel.untertitel,
+                  style: TextStyle(fontSize: kFontSize18, color: Colors.white),
+                ),
+                Text(
                   reisezielModel.beschreibung,
                   style: TextStyle(color: Colors.white),
                 ),
                 Row(
                   children: [
-                    Icon(Icons.star_rate_rounded, color: Colors.amber),
-                    Icon(Icons.star_rate_rounded, color: Colors.amber),
-                    Icon(Icons.star_rate_rounded, color: Colors.amber),
-                    Icon(Icons.star_rate_rounded, color: Colors.amber),
-                    Icon(Icons.star_rate_rounded, color: Colors.black12),
+                    Icon(
+                      Icons.star_rate_rounded,
+                      color:
+                          reisezielModel.sterne >= 1
+                              ? Colors.amber
+                              : Colors.white70,
+                    ),
+                    Icon(
+                      Icons.star_rate_rounded,
+                      color:
+                          reisezielModel.sterne >= 2
+                              ? Colors.amber
+                              : Colors.white70,
+                    ),
+                    Icon(
+                      Icons.star_rate_rounded,
+                      color:
+                          reisezielModel.sterne >= 3
+                              ? Colors.amber
+                              : Colors.white70,
+                    ),
+                    Icon(
+                      Icons.star_rate_rounded,
+                      color:
+                          reisezielModel.sterne >= 4
+                              ? Colors.amber
+                              : Colors.white70,
+                    ),
+                    Icon(
+                      Icons.star_rate_rounded,
+                      color:
+                          reisezielModel.sterne >= 5
+                              ? Colors.amber
+                              : Colors.white70,
+                    ),
                   ],
                 ),
                 Row(
                   children: [
                     Text(
-                      'Euro 130,-',
+                      ('Euro ${reisezielModel.neuerPreis},-'),
                       style: TextStyle(
                         fontSize: kFontSize18,
                         fontWeight: FontWeight.bold,
@@ -57,7 +95,7 @@ class BeschreibungPage extends StatelessWidget {
                     ),
                     SizedBox(width: kPadding7),
                     Text(
-                      '199,-',
+                      ('Euro ${reisezielModel.alterPreis},-'),
                       style: TextStyle(
                         decoration: TextDecoration.lineThrough,
                         fontSize: kFontSize18,

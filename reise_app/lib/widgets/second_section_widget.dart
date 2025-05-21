@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:reise_app/data/reiseziel_data.dart';
 import 'package:reise_app/konstanten.dart';
+import 'package:reise_app/models/reiseziel_model.dart';
 import 'package:reise_app/pages/beschreibung_page.dart';
 
 class SecondSectionWidget extends StatelessWidget {
@@ -77,30 +78,45 @@ class SecondSectionWidget extends StatelessWidget {
                             children: [
                               Icon(
                                 Icons.star_rate_rounded,
-                                color: Colors.amber,
+                                color:
+                                    reisezieleListe.elementAt(index).sterne >= 1
+                                        ? Colors.amber
+                                        : Colors.white70,
                               ),
                               Icon(
                                 Icons.star_rate_rounded,
-                                color: Colors.amber,
+                                color:
+                                    reisezieleListe.elementAt(index).sterne >= 2
+                                        ? Colors.amber
+                                        : Colors.white70,
                               ),
                               Icon(
                                 Icons.star_rate_rounded,
-                                color: Colors.amber,
+                                color:
+                                    reisezieleListe.elementAt(index).sterne >= 3
+                                        ? Colors.amber
+                                        : Colors.white70,
                               ),
                               Icon(
                                 Icons.star_rate_rounded,
-                                color: Colors.amber,
+                                color:
+                                    reisezieleListe.elementAt(index).sterne >= 4
+                                        ? Colors.amber
+                                        : Colors.white70,
                               ),
                               Icon(
                                 Icons.star_rate_rounded,
-                                color: Colors.black12,
+                                color:
+                                    reisezieleListe.elementAt(index).sterne >= 5
+                                        ? Colors.amber
+                                        : Colors.white70,
                               ),
                             ],
                           ),
                           Row(
                             children: [
                               Text(
-                                'Euro 130,-',
+                                ('Euro ${reisezieleListe.elementAt(index).neuerPreis},-'),
                                 style: TextStyle(
                                   fontSize: kFontSize18,
                                   fontWeight: FontWeight.bold,
@@ -109,7 +125,7 @@ class SecondSectionWidget extends StatelessWidget {
                               ),
                               SizedBox(width: kPadding7),
                               Text(
-                                '199,-',
+                                ('Euro ${reisezieleListe.elementAt(index).alterPreis},-'),
                                 style: TextStyle(
                                   decoration: TextDecoration.lineThrough,
                                   fontSize: kFontSize18,

@@ -11,6 +11,7 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      title: 'Reisbüro App',
       home: WidgetTree(),
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
