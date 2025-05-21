@@ -11,8 +11,8 @@ class ReisezielModel {
     required this.titel,
     required this.untertitel,
     required this.imagePath,
-    required this.alterPreis,
-    required this.neuerPreis,
+    this.alterPreis = '199',
+    this.neuerPreis = '145',
     required this.beschreibung,
     required this.sterne,
   });

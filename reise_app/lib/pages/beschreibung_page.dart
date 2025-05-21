@@ -13,7 +13,12 @@ class BeschreibungPage extends StatelessWidget {
       children: [
         SizedBox(
           height: double.infinity,
-          child: Image.asset(reisezielModel.imagePath, fit: BoxFit.cover),
+          child: Image.asset(
+            reisezielModel.imagePath,
+            fit: BoxFit.cover,
+            color: Colors.black.withOpacity(0.4),
+            colorBlendMode: BlendMode.darken,
+          ),
         ),
         Scaffold(
           backgroundColor: Colors.transparent,
@@ -44,6 +49,7 @@ class BeschreibungPage extends StatelessWidget {
                   reisezielModel.beschreibung,
                   style: TextStyle(color: Colors.white),
                 ),
+                SizedBox(height: kHeight20),
                 Row(
                   children: [
                     Icon(
@@ -105,6 +111,7 @@ class BeschreibungPage extends StatelessWidget {
                     ),
                   ],
                 ),
+                SizedBox(height: kHeight20),
               ],
             ),
           ),
