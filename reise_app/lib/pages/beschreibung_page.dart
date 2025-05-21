@@ -111,7 +111,27 @@ class BeschreibungPage extends StatelessWidget {
                     ),
                   ],
                 ),
-                SizedBox(height: kHeight20),
+                SizedBox(width: kPadding20),
+                Center(
+                  child: IconButton(
+                    onPressed: () {
+                      showModalBottomSheet(
+                        backgroundColor: Colors.white60,
+                        context: context,
+                        builder: (context) {
+                          return Container(height: 400);
+                        },
+                      );
+                    },
+                    icon: Icon(Icons.keyboard_arrow_up_rounded),
+                    iconSize: kAppBarIconSize,
+                    style: IconButton.styleFrom(
+                      backgroundColor: Colors.black12,
+                      foregroundColor: Colors.white,
+                    ),
+                  ),
+                ),
+                SizedBox(width: kPadding20),
               ],
             ),
           ),
